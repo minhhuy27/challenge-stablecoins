@@ -19,7 +19,6 @@ import { formatDisplayValue } from "~~/utils/helpers";
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 const PURPLE_COLOR = "#8884d8";
 const GREEN_COLOR = "#82ca9d";
-const ORANGE_COLOR = "#f9a73e";
 
 type DataPoint = {
   blockNumber: number;
@@ -49,7 +48,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
       <div className="bg-base-200 border border-base-300 rounded-lg px-3 my-0 shadow-lg">
         <p className="font-semibold text-sm mt-2 mb-1">Block {label}</p>
         <p className="text-sm my-0">
-          <span style={{ color: ORANGE_COLOR }}>●</span> Total: {formatDisplayValue(total)} MyUSD
+          <span style={{ color: PURPLE_COLOR }}>●</span> Total: {formatDisplayValue(total)} MyUSD
         </p>
         <p className="text-sm my-0">
           <span style={{ color: GREEN_COLOR }}>●</span> Staked: {formatDisplayValue(staked)} MyUSD
@@ -202,7 +201,7 @@ const SupplyGraph = () => {
                 type="monotone"
                 dataKey="totalSupply"
                 name="Total"
-                stroke={ORANGE_COLOR}
+                stroke={PURPLE_COLOR}
                 strokeWidth={2}
                 dot={false}
                 activeDot={{ r: 5 }}
@@ -231,7 +230,7 @@ const SupplyGraph = () => {
                 payload={
                   stakedEvents && stakedEvents?.length > 0
                     ? undefined
-                    : [{ value: "Total", type: "line", color: ORANGE_COLOR }]
+                    : [{ value: "Total", type: "line", color: PURPLE_COLOR }]
                 }
               />
             </LineChart>

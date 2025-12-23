@@ -4,7 +4,6 @@ import UserPosition from "./UserPosition";
 import { formatEther } from "viem";
 import { useAccount } from "wagmi";
 import { useScaffoldEventHistory, useScaffoldReadContract } from "~~/hooks/scaffold-eth";
-import { tokenName } from "~~/utils/constant";
 
 const UserPositionsTable = () => {
   const { address: connectedAddress } = useAccount();
